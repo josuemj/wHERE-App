@@ -15,9 +15,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.text.font.FontWeight
+import androidx.navigation.NavController
 
+
+/**
+ * This composable represents [login] [screen]
+ * After launching screen and clicking on login
+ * @param navController
+ */
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     Box(modifier = Modifier.fillMaxSize()) {
         // TopAppBar for icons
         TopAppBar(
@@ -68,10 +75,4 @@ fun LoginScreen() {
             )
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewLoginScreen() {
-    LoginScreen()
 }
