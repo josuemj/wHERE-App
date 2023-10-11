@@ -38,7 +38,7 @@ fun LaunchScreen(navController: NavController){
              */
             Button(
                 onClick = {
-
+                    navController.navigate(Model.LoginScreen.route)
                 })
             {
 
