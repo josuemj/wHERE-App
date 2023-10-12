@@ -1,4 +1,4 @@
-package com.example.whereapp.ui.theme.launchscreen
+package com.example.whereapp.ui.launchscreen
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
