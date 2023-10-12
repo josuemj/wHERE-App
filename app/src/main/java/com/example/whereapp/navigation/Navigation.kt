@@ -1,7 +1,6 @@
 package com.example.whereapp.navigation
 
-/**
- *
+
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
@@ -25,7 +24,7 @@ fun Navigation(){
         }
 
         composable(route = Model.LoginScreen.route){
-            LoginScreen(navController = navController)
+            LoginScreen()
         }
 
 
@@ -33,4 +32,3 @@ fun Navigation(){
 
 }
 
- */
