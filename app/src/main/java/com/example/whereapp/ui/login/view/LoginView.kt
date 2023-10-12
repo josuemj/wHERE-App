@@ -100,7 +100,7 @@ fun LoginScreen() {
                 )
 
                 Button(onClick = { /* Handle login button click */ }) {
-                    Text("Login")
+                    Text("Login") //To go home screen
                 }
 
                 Text(
@@ -111,11 +111,4 @@ fun LoginScreen() {
             }
         }
     }
-}
-
-//PREVIEW
-@Preview(showBackground = true)
-@Composable
-fun PreviewLoginScreen() {
-    LoginScreen()
 }
