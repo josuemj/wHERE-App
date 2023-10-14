@@ -16,10 +16,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.example.whereapp.R
+import com.example.whereapp.navigation.Model
 
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(navController: NavController) {
     // Background image
     Image(
         painter = painterResource(id = R.drawable.welcome_background),
@@ -67,7 +69,10 @@ fun WelcomeScreen() {
         Spacer(modifier = Modifier.height(8.dp))
 
         Button(
-            onClick = { /* TODO: Handle login click */ },
+            onClick = {
+                        //Login going
+                      navController.navigate(Model.LoginScreen.route)
+                      },
             shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
 
@@ -79,8 +84,3 @@ fun WelcomeScreen() {
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun WelcomeScreenPreview() {
-    WelcomeScreen()
-}

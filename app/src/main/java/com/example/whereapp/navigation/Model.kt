@@ -1,7 +1,7 @@
 package com.example.whereapp.navigation
 
 sealed class Model(val route:String){
-    object LaunchScreen : Model("launch_screen")
+    object WelcomeScreen : Model("start_screen")
     object LoginScreen : Model("login_screen")
 
 }
