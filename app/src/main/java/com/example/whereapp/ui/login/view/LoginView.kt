@@ -9,9 +9,6 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -22,6 +19,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import com.example.whereapp.R
 
 @Composable
@@ -29,27 +27,10 @@ fun LoginScreen() {
     Box(modifier = Modifier.fillMaxSize()) {
         // Background image
         Image(
-            painter = painterResource(id = R.drawable.background),
+            painter = painterResource(id = R.drawable.login_background),
             contentDescription = "Background Image",
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop
-        )
-
-        // TopAppBar for icons
-        TopAppBar(
-            title = { /* No title */ },
-            navigationIcon = {
-                IconButton(onClick = { /* Handle navigation icon click */ }) {
-                    Icon(Icons.Default.Menu, contentDescription = "Menu", tint = Color.White)
-                }
-            },
-            actions = {
-                IconButton(onClick = { /* Handle search icon click */ }) {
-                    Icon(Icons.Default.Search, contentDescription = "Search", tint = Color.White)
-                }
-            },
-            backgroundColor = Color.Transparent,
-            elevation = 0.dp
         )
 
         // "wHERE" text positioned higher
@@ -58,7 +39,7 @@ fun LoginScreen() {
             fontWeight = FontWeight.Bold,
             style = MaterialTheme.typography.h4,
             color = MaterialTheme.colors.surface,
-            modifier = Modifier.align(Alignment.TopCenter).offset(y = 200.dp)
+            modifier = Modifier.align(Alignment.TopCenter).offset(y = 170.dp)  // Comentario: Modifica el valor de y aquí para ajustar la posición vertical del texto. Por ejemplo, usa 150.dp para elevarlo más.
         )
 
         // Enclosing box from the middle of the screen to the bottom
@@ -66,7 +47,7 @@ fun LoginScreen() {
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .fillMaxWidth()
-                .fillMaxHeight(0.5f)
+                .fillMaxHeight(0.55f)  // Comentario: Modifica este valor para ajustar la posición vertical de la Box. Por ejemplo, usa 0.4f para elevarla más.
                 .clip(RoundedCornerShape(16.dp))
                 .background(MaterialTheme.colors.surface)
         ) {
@@ -76,8 +57,10 @@ fun LoginScreen() {
             ) {
                 Text(
                     "Login",
-                    fontWeight = FontWeight.Normal,
+                    fontWeight = FontWeight.Bold,
                     style = MaterialTheme.typography.h6,
+                    color = Color(0xFF595B70),
+                    fontSize = 65.sp,
                     modifier = Modifier.padding(bottom = 30.dp)
                 )
 
@@ -99,16 +82,28 @@ fun LoginScreen() {
                     modifier = Modifier.fillMaxWidth().padding(bottom = 30.dp)
                 )
 
-                Button(onClick = { /* Handle login button click */ }) {
-                    Text("Login") //To go home screen
+                Button(onClick = { /* Handle login button click */ },
+                    colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFFA378A)))
+                {
+                    Text("Login",
+                        color = Color.White,
+                        fontSize = 20.sp,)
+
+
                 }
 
                 Text(
                     "Don't have an account? Sign Up",
                     color = Color.Gray,
-                    modifier = Modifier.padding(top = 15.dp)
+                    modifier = Modifier.padding(top = 35.dp)
+
                 )
             }
         }
     }
+}
+@Preview(showBackground = true)
+@Composable
+fun LoginScreenPreview() {
+    LoginScreen()
 }
