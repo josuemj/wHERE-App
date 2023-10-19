@@ -20,10 +20,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.whereapp.R
+import com.example.whereapp.navigation.Model
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     Box(modifier = Modifier.fillMaxSize()) {
         // Background image
         Image(
@@ -82,7 +84,9 @@ fun LoginScreen() {
                     modifier = Modifier.fillMaxWidth().padding(bottom = 30.dp)
                 )
 
-                Button(onClick = { /* Handle login button click */ },
+                Button(onClick = {
+                                 navController.navigate(Model.HomeScreen.route)
+                                 },
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFFA378A)))
                 {
                     Text("Login",
@@ -101,9 +105,4 @@ fun LoginScreen() {
             }
         }
     }
-}
-@Preview(showBackground = true)
-@Composable
-fun LoginScreenPreview() {
-    LoginScreen()
 }

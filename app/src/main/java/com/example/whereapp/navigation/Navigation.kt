@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.whereapp.ui.launchscreen.LaunchScreen
+import com.example.whereapp.ui.apphome.view.HomeScreen
 import com.example.whereapp.ui.start.view.WelcomeScreen
 import com.example.whereapp.ui.theme.login.view.LoginScreen
 
@@ -25,7 +25,11 @@ fun Navigation(){
         }
 
         composable(route = Model.LoginScreen.route){
-            LoginScreen()
+            LoginScreen(navController)
+        }
+
+        composable(route = Model.HomeScreen.route){
+            HomeScreen()
         }
 
 
