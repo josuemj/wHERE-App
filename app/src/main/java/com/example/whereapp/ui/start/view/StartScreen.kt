@@ -57,7 +57,9 @@ fun WelcomeScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(8.dp))
 
         Button(
-            onClick = { /* TODO: Handle register click */ },
+            onClick = {
+                        navController.navigate(Model.SignUpScreen.route)
+                      },
             shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
         ) {
