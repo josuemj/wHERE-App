@@ -23,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.whereapp.R
+import com.example.whereapp.navigation.BottonBarModel
 import com.example.whereapp.navigation.Model
 
 @Composable
@@ -86,7 +87,7 @@ fun LoginScreen(navController: NavController) {
                 )
 
                 Button(onClick = {
-                                 navController.navigate(Model.HomeScreen.route)
+                                 navController.navigate(BottonBarModel.HomeScreen.route)
                                  },
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFFA378A)))
                 {

@@ -5,7 +5,7 @@ sealed class Model(val route:String){
     object LoginScreen : Model("login_screen")
     object SignUpScreen : Model("signup_screen")
 
-    object HomeScreen : Model("home_screen")
+
 
 
 }
