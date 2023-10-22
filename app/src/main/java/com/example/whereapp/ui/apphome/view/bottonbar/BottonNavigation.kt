@@ -10,7 +10,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.whereapp.navigation.BottonBarModel
-import com.example.whereapp.navigation.BottonBarModel.ExploreScreen.icon
 
 @Composable
 
@@ -23,13 +22,18 @@ fun BottonNagivationApp(navController: NavController){
         BottonBarModel.ProfileScreen
     )
 
-    BottomNavigation() {
+    BottomNavigation(
+        backgroundColor = Color.White
+    ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
 
         items.forEach{item->
             BottomNavigationItem(
-                icon = { Icon(painterResource(id = item.icon), contentDescription = item.tittle) },
+
+                icon = { Icon(
+                    painterResource(id = item.icon), contentDescription = item.tittle)
+                       },
                 label = { Text(text = item.tittle,
                     fontSize = 9.sp) },
                 selectedContentColor = Color.Black,
