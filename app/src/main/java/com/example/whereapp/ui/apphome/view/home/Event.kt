@@ -87,7 +87,6 @@ fun eventPost(
     currentPeople:Int,
     description:String
 
-
 )
 {
 
