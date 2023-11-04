@@ -3,7 +3,7 @@ import BottonNagivationApp
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.material.Scaffold
-
+import com.example.whereapp.ui.map.view.MapScreen
 import androidx.compose.runtime.Composable
 
 import androidx.navigation.NavController
@@ -43,7 +43,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 
 import coil.compose.rememberImagePainter
-
+import com.example.whereapp.navigation.Model
 
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -218,7 +218,14 @@ fun ExploreScreen(navController: NavController) {
                 // Botón "Go"
                 Button(
                     onClick = {
-                        // TODO: Acción al hacer clic en el botón
+                        navController.navigate(
+                            Model.MapScreen.createRoute(
+                                latitude = 14.61200775882038f,
+                                longitude = -90.48189040148607f,
+                                title = "Vento"
+                            )
+                        )
+
                     },
                     modifier = Modifier
                         .fillMaxWidth()
