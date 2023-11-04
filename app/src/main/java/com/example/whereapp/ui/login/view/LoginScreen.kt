@@ -1,10 +1,9 @@
 package com.example.whereapp.ui.theme.login.view
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.foundation.layout.*
@@ -17,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.text.font.FontWeight
@@ -24,10 +24,17 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.whereapp.R
 import com.example.whereapp.navigation.BottonBarModel
-import com.example.whereapp.navigation.Model
+import com.example.whereapp.ui.login.view.LoginViewModel
 
 @Composable
-fun LoginScreen(navController: NavController) {
+fun LoginScreen(
+    viewModel: LoginViewModel,
+    navController: NavController
+) {
+
+    val context = LocalContext.current
+    val state = viewModel.state
+
     Box(modifier = Modifier.fillMaxSize()) {
         // Background image
         Image(
@@ -68,26 +75,40 @@ fun LoginScreen(navController: NavController) {
                     modifier = Modifier.padding(bottom = 30.dp)
                 )
 
-                val (username, setUsername) = remember { mutableStateOf(TextFieldValue()) }
                 val (password, setPassword) = remember { mutableStateOf(TextFieldValue()) }
 
+                /**
+                 * Email text field
+                 */
                 TextField(
-                    value = username,
-                    onValueChange = { setUsername(it) },
-                    label = { Text("User") },
+                    value = state.email,
+                    onValueChange = { viewModel.updateEmail(it) },
+                    label = { Text("Email") },
                     modifier = Modifier.fillMaxWidth().padding(bottom = 40.dp)
                 )
 
+                /**
+                 * Password text field
+                 */
                 TextField(
-                    value = password,
-                    onValueChange = { setPassword(it) },
+                    value = state.password,
+                    onValueChange = { viewModel.updatePassword(it) },
                     label = { Text("Password") },
                     visualTransformation = PasswordVisualTransformation(),
                     modifier = Modifier.fillMaxWidth().padding(bottom = 30.dp)
                 )
 
                 Button(onClick = {
-                                 navController.navigate(BottonBarModel.HomeScreen.route)
+                                    viewModel.login()
+                                    Toast.makeText(
+                                        context,
+                                        LoginViewModel.staticMessage,
+                                        Toast.LENGTH_SHORT)
+                                        .show()
+
+                                    if (LoginViewModel.staticMessage=="Log in Success"){
+                                        navController.navigate(BottonBarModel.HomeScreen.route)
+                                    }
                                  },
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFFA378A)))
                 {
@@ -96,7 +117,6 @@ fun LoginScreen(navController: NavController) {
                         fontSize = 20.sp,)
 
                 }
-
 
             }
         }

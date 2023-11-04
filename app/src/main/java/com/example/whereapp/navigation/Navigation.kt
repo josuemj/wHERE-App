@@ -12,9 +12,13 @@ import com.example.whereapp.ui.apphome.view.home.HomeScreen
 import com.example.whereapp.ui.regist.view.SignUpScreen
 import com.example.whereapp.ui.start.view.WelcomeScreen
 import com.example.whereapp.ui.theme.login.view.LoginScreen
+import com.example.whereapp.ui.login.view.LoginViewModel
+
 
 @Composable
-fun Navigation(){
+fun Navigation(
+    viewModel: LoginViewModel
+){
 
     val navController = rememberNavController()
 
@@ -28,7 +32,7 @@ fun Navigation(){
         }
 
         composable(route = Model.LoginScreen.route){
-            LoginScreen(navController)
+            LoginScreen(viewModel,navController)
         }
 
 
