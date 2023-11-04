@@ -9,6 +9,9 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -47,6 +50,7 @@ fun LoginScreen(
         // "wHERE" text positioned higher
         Text(
             "wHERE",
+            fontSize = 48.sp,
             fontWeight = FontWeight.Bold,
             style = MaterialTheme.typography.h4,
             color = MaterialTheme.colors.surface,
@@ -58,7 +62,7 @@ fun LoginScreen(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .fillMaxWidth()
-                .fillMaxHeight(0.55f)  // Comentario: Modifica este valor para ajustar la posición vertical de la Box. Por ejemplo, usa 0.4f para elevarla más.
+                .fillMaxHeight(0.60f)  // Comentario: Modifica este valor para ajustar la posición vertical de la Box. Por ejemplo, usa 0.4f para elevarla más.
                 .clip(RoundedCornerShape(16.dp))
                 .background(MaterialTheme.colors.surface)
         ) {
@@ -71,34 +75,51 @@ fun LoginScreen(
                     fontWeight = FontWeight.Bold,
                     style = MaterialTheme.typography.h6,
                     color = Color(0xFF595B70),
-                    fontSize = 65.sp,
+                    fontSize = 40.sp,
                     modifier = Modifier.padding(bottom = 30.dp)
                 )
-
-                val (password, setPassword) = remember { mutableStateOf(TextFieldValue()) }
 
                 /**
                  * Email text field
                  */
                 TextField(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 30.dp),
                     value = state.email,
                     onValueChange = { viewModel.updateEmail(it) },
                     label = { Text("Email") },
-                    modifier = Modifier.fillMaxWidth().padding(bottom = 40.dp)
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Default.Person,
+                            contentDescription = null
+                        )
+                    }
                 )
 
                 /**
                  * Password text field
                  */
                 TextField(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 30.dp),
                     value = state.password,
                     onValueChange = { viewModel.updatePassword(it) },
                     label = { Text("Password") },
                     visualTransformation = PasswordVisualTransformation(),
-                    modifier = Modifier.fillMaxWidth().padding(bottom = 30.dp)
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Default.Lock,
+                            contentDescription = null
+                        )
+                    }
                 )
 
-                Button(onClick = {
+                Button(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(50),
+                    onClick = {
                                     viewModel.login()
                                     Toast.makeText(
                                         context,
