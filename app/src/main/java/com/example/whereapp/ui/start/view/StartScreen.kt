@@ -56,6 +56,9 @@ fun WelcomeScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(8.dp))
 
+        /**
+         * Sign up navigation
+         */
         Button(
             onClick = {
                         navController.navigate(Model.SignUpScreen.route)
@@ -70,9 +73,11 @@ fun WelcomeScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(8.dp))
 
+        /**
+         * Login navigation
+         */
         Button(
             onClick = {
-                        //Login going
                       navController.navigate(Model.LoginScreen.route)
                       },
             shape = RoundedCornerShape(16.dp),

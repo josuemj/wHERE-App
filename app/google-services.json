@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "957267461329",
+    "project_id": "whereapp-4b60d",
+    "storage_bucket": "whereapp-4b60d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957267461329:android:c0fb8f3aa58afaddfcf1f0",
+        "android_client_info": {
+          "package_name": "com.example.whereapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj4gW65wDhju0jFYOotmX3eCPG6VpWOfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -78,4 +78,10 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
 
 
+    //Firebase and auth :)
+    implementation platform('com.google.firebase:firebase-bom:30.1.0') //KEY!
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1'
+
+
 }
