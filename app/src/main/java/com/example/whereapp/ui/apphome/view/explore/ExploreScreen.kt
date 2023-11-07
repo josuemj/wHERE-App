@@ -48,7 +48,7 @@ import com.example.whereapp.navigation.Model
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun ExploreScreen(navController: NavController) {
+fun ExploreScreen(navController: NavController, place: Place) {
     Scaffold(
         bottomBar = {
             BottonNagivationApp(navController)
@@ -65,7 +65,7 @@ fun ExploreScreen(navController: NavController) {
                 ) {
                     // Imagen
                     Image(
-                        painter = rememberImagePainter("https://media-cdn.tripadvisor.com/media/photo-s/1b/f9/5d/c4/vento-workspace-sky-lounge.jpg"),
+                        painter = rememberImagePainter(place.photo),
                         contentDescription = null,
                         modifier = Modifier
                             .fillMaxWidth()
@@ -157,7 +157,7 @@ fun ExploreScreen(navController: NavController) {
 
                 // Texto "Vento" en negritas
                 Text(
-                    text = "Vento",
+                    text = place.name,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(start = 16.dp, top = 8.dp)
                 )
@@ -175,7 +175,7 @@ fun ExploreScreen(navController: NavController) {
                     Icon(imageVector = Icons.Default.LocationOn, contentDescription = "Ubicación")
 
                     // Texto "Zona 10" a la derecha del icono de ubicación
-                    Text(text = "Zona 10", modifier = Modifier.padding(start = 8.dp))
+                    Text(text = place.ubication, modifier = Modifier.padding(start = 8.dp))
 
                     Spacer(modifier = Modifier.weight(1f)) // Esto empujará el icono de estrella y el texto "5.0" hacia la derecha
 
@@ -187,7 +187,7 @@ fun ExploreScreen(navController: NavController) {
                     }
 
                     // Texto "5.0" debajo del icono de estrella
-                    Text(text = "5.0", modifier = Modifier.padding(end = 8.dp))
+                    Text(text = place.rating, modifier = Modifier.padding(end = 8.dp))
                 }
             }
 
@@ -220,9 +220,9 @@ fun ExploreScreen(navController: NavController) {
                     onClick = {
                         navController.navigate(
                             Model.MapScreen.createRoute(
-                                latitude = 14.61200775882038f,
-                                longitude = -90.48189040148607f,
-                                title = "Vento"
+                                latitude = place.latitude,
+                                longitude = place.longitude,
+                                title = place.name
                             )
                         )
 

@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.whereapp.ui.apphome.view.explore.ExploreScreen
+import com.example.whereapp.ui.apphome.view.explore.Place
 import com.example.whereapp.ui.apphome.view.home.HomeScreen
 import com.example.whereapp.ui.regist.view.SignUpScreen
 import com.example.whereapp.ui.start.view.WelcomeScreen
@@ -54,7 +55,7 @@ fun Navigation(
         }
 
         composable(route = BottonBarModel.ExploreScreen.route){
-            ExploreScreen(navController)
+           // ExploreScreen(navController, place = Place )
         }
 
         composable(route = BottonBarModel.ProfileScreen.route){
