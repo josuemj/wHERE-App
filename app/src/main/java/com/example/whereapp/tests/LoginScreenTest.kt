@@ -1,15 +1,17 @@
-package com.example.whereapp.ui.regist.view
+package com.example.whereapp.tests
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -19,30 +21,22 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.whereapp.R
 import com.example.whereapp.navigation.BottonBarModel
-import com.example.whereapp.navigation.Model
 import com.example.whereapp.ui.login.view.LoginViewModel
 
+@Preview(showBackground = true)
 @Composable
-fun SignUpScreen(
+fun LoginScreen(
 
-    viewModel: LoginViewModel,
-    navController: NavController
-
-){
-
-    val context = LocalContext.current
-    val state = viewModel.state
-    val passwordState = remember { mutableStateOf(TextFieldValue()) }
-    val passwordConfirmationState = remember { mutableStateOf(TextFieldValue()) }
+) {
+    val hint = ""
+    val textState = remember { TextFieldValue(hint) }
 
 
 
@@ -58,12 +52,13 @@ fun SignUpScreen(
         // "wHERE" text positioned higher
         Text(
             "wHERE",
+            fontSize = 48.sp,
             fontWeight = FontWeight.Bold,
             style = MaterialTheme.typography.h4,
             color = MaterialTheme.colors.surface,
             modifier = Modifier
                 .align(Alignment.TopCenter)
-                .offset(y = 170.dp)  // Comentario: Modifica el valor de y aquí para ajustar la posición vertical del texto. Por ejemplo, usa 150.dp para elevarlo más.
+                .offset(y = 170.dp) // Comentario: Modifica el valor de y aquí para ajustar la posición vertical del texto. Por ejemplo, usa 150.dp para elevarlo más.
         )
 
         // Enclosing box from the middle of the screen to the bottom
@@ -71,7 +66,7 @@ fun SignUpScreen(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .fillMaxWidth()
-                .fillMaxHeight(0.64f)  // Comentario: Modifica este valor para ajustar la posición vertical de la Box. Por ejemplo, usa 0.4f para elevarla más.
+                .fillMaxHeight(0.60f)  // Comentario: Modifica este valor para ajustar la posición vertical de la Box. Por ejemplo, usa 0.4f para elevarla más.
                 .clip(RoundedCornerShape(16.dp))
                 .background(MaterialTheme.colors.surface)
         ) {
@@ -80,22 +75,24 @@ fun SignUpScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    "Sign Up",
+                    "Login",
                     fontWeight = FontWeight.Bold,
                     style = MaterialTheme.typography.h6,
                     color = Color(0xFF595B70),
-                    fontSize = 50.sp,
-                    modifier = Modifier.padding(bottom = 30.dp)
+                    fontSize = 40.sp,
+                    modifier = Modifier.padding(bottom = 20.dp)
                 )
 
 
+                /**
+                 * Email text field
+                 */
                 TextField(
-                    value = state.email,
-                    onValueChange = { viewModel.updateEmail(it) },
+
+                    value = textState ,
+                    onValueChange = {  },
                     label = { Text("Email") },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 20.dp),
+                    modifier = Modifier.fillMaxWidth().padding(bottom =30.dp),
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Person,
@@ -104,31 +101,15 @@ fun SignUpScreen(
                     }
                 )
 
+                /**
+                 * Password text field
+                 */
                 TextField(
-                    value = passwordState.value,
-                    onValueChange = {  passwordState.value=it },
+                    value = textState ,
+                    onValueChange = {  },
                     label = { Text("Password") },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 20.dp),
                     visualTransformation = PasswordVisualTransformation(),
-                    leadingIcon = {
-                        Icon(
-                            imageVector = Icons.Default.Lock,
-                            contentDescription = null
-                        )
-                    }
-
-                )
-
-                TextField(
-                    value = passwordConfirmationState.value,
-                    onValueChange = { passwordConfirmationState.value = it },
-                    label = { Text("Confirm password") },
-                    visualTransformation = PasswordVisualTransformation(),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 20.dp),
+                    modifier = Modifier.fillMaxWidth().padding(bottom = 30.dp),
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Lock,
@@ -139,38 +120,16 @@ fun SignUpScreen(
 
                 Button(
                     modifier = Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(50),
                     onClick = {
 
-
-                        if (passwordState.value.text == passwordConfirmationState.value.text) {
-                            state.password = passwordState.value.text
-                            viewModel.signIn()
-                            println("getting back")
-                            println("Toast Message: '"+LoginViewModel.staticMessage+"'")
-                            Toast.makeText(
-                                context,
-                                LoginViewModel.staticMessage,
-                                Toast.LENGTH_SHORT)
-                                .show()
-                            navController.navigate(Model.WelcomeScreen.route)
-                        } else {
-                            Toast.makeText(
-                                context,
-                                "Password does not match",
-                                Toast.LENGTH_SHORT)
-                                .show()
-                        }
-
-                    },
+                },
                     colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFFA378A)))
                 {
-                    Text("Sign Up",
+                    Text("Login",
                         color = Color.White,
                         fontSize = 20.sp,)
 
                 }
-
 
             }
         }

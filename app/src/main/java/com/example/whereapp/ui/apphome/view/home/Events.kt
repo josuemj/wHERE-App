@@ -8,7 +8,7 @@ class Events (
     val profileImage:Int,
     val postImage:Int,
     val currentPeople:Int,
-    val description:String
+    val description:String,
         ){
 
     companion object{

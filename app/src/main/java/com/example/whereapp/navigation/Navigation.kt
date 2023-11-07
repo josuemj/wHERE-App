@@ -40,7 +40,7 @@ fun Navigation(
 
 
         composable(route = Model.SignUpScreen.route){
-            SignUpScreen()
+            SignUpScreen(viewModel,navController)
         }
 
         composable(route = Model.MapScreen.route){
