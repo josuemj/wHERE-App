@@ -6,4 +6,5 @@ data class Place(
     val rating: String,
     val latitude: Float,
     val longitude: Float,
-    val photo: String)
+    val photo: String
+    )

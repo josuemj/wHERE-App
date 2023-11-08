@@ -53,7 +53,6 @@ class LoginViewModel:ViewModel() {
                 val sigIng = Firebase.auth.createUserWithEmailAndPassword(state.email,state.password).await()
                 println("Sign in success")
                 staticMessage = "Sign in Success"
-                Thread.sleep(1000)
 
             }catch (e:Exception){
                 var message = e.message.toString()

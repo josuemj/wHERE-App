@@ -3,13 +3,15 @@ package com.example.whereapp.navigation
 
 
 import ProfileScreen
+import android.view.Display.Mode
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.whereapp.ui.apphome.view.explore.ExploreScreen
+import com.example.whereapp.ui.apphome.view.explore.ExploreScreenDetails
+import com.example.whereapp.ui.apphome.view.explore.MainExplorer
 import com.example.whereapp.ui.apphome.view.explore.Place
 import com.example.whereapp.ui.apphome.view.home.HomeScreen
 import com.example.whereapp.ui.regist.view.SignUpScreen
@@ -47,7 +49,50 @@ fun Navigation(
         composable(route = Model.MapScreen.route){
 
         }
+        
+        composable(route = Model.ExploreScreenDetails.route+
+                "/{name}/{longDescription}/{ubication}/{rating}/{postImage}",
+            arguments = listOf(
+                navArgument("name"){
+                    type = NavType.StringType
+                    defaultValue=""
+                    nullable = true
+                },
+                navArgument("longDescription"){
+                    type = NavType.StringType
+                    defaultValue=""
+                    nullable = true
+                },
+                navArgument("ubication"){
+                    type = NavType.StringType
+                    defaultValue=""
+                    nullable = true
+                },
+                navArgument("rating"){
+                    type = NavType.StringType
+                    defaultValue=""
+                    nullable = true
+                },
+                navArgument("postImage"){
+                    type = NavType.StringType
+                    defaultValue=""
+                    nullable = true
+                }
 
+            )
+        )
+        {
+            entry->
+            ExploreScreenDetails(
+                navController = navController,
+                name = entry.arguments?.getString("name")!!,
+                longDescription = entry.arguments?.getString("longDescription")!!,
+                ubication = entry.arguments?.getString("ubication")!!,
+                rating = entry.arguments?.getString("rating")!!,
+                postImage = entry.arguments?.getString("postImage")!!
+
+            )
+        }
 
         //Bottom bar navigation
         composable(route = BottonBarModel.HomeScreen.route){
@@ -55,13 +100,13 @@ fun Navigation(
         }
 
         composable(route = BottonBarModel.ExploreScreen.route){
-           // ExploreScreen(navController, place = Place )
+            MainExplorer(navController = navController)
         }
 
         composable(route = BottonBarModel.ProfileScreen.route){
             ProfileScreen(navController)
         }
-
+        
         composable(
             route = Model.MapScreen.route,
             arguments = listOf(

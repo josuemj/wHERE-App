@@ -18,59 +18,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import coil.compose.rememberImagePainter
 import com.example.whereapp.R
-
-@Preview
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
-@Composable
-fun Viewer(){
-    val scrollState = rememberScrollState()
-
-    Scaffold(
-        topBar = { TopAppBar(
-
-        ) {
-            Text(text = "top app bar")
-        }},
-        bottomBar = {
-            BottomAppBar() {
-                Text(text = "Bottom bar")
-            }
-        }
-    ) {
-        Column(
-            modifier = Modifier.fillMaxSize().verticalScroll(state = scrollState)
-        ){
-
-            eventPost(
-                    "4 grados norte",
-            "4grnorte",
-            R.drawable.profile_4grados,
-            R.drawable.gradosnorte,
-            103,
-            "Miko in zone!"
-            )
-
-            eventPost(
-                "Universidad del Valle",
-                "uvgedugt",
-                R.drawable.profile_uvg,
-                R.drawable.poster_uvg,
-                2300,
-                "U.S president on field"
-            )
-
-            eventPost(
-                "Ciudad Cayala",
-                "cayalagt",
-                R.drawable.profile_cayala,
-                R.drawable.post_cayala,
-                103,
-                "Black friday!"
-            )
-        }
-    }
-}
+import com.example.whereapp.navigation.BottonBarModel
+import com.example.whereapp.navigation.Model
+import android.net.Uri // Import Uri from android.net
 
 
 
@@ -82,10 +35,16 @@ fun eventPost(
 
     name:String,
     username:String,
-    profileImage:Int,
-    postImage:Int,
-    currentPeople:Int,
-    description:String
+    profileImage:String,
+    postImage:String,
+    currentPeople:String,
+    description:String,
+    longDescription:String,
+    ubication:String,
+    rating:String,
+    latitude:String,
+    longitude:String,
+    navController: NavController
 
 )
 {
@@ -96,14 +55,37 @@ fun eventPost(
             .padding(5.dp)
 
             ){
-        publisherBox(profileImage,name,username)
-        publisherCard(postImage,description,currentPeople)
-        Spacer(modifier = Modifier.fillMaxWidth().height(10.dp))
+        publisherBox(
+            profileImage,
+            name,
+            username,
+            navController
+        )
+
+        publisherCard(
+            name,
+            username,
+            profileImage,
+            postImage,
+            currentPeople,
+            description,
+            ubication,
+            rating,
+            latitude,
+            longitude,
+            longDescription,
+            navController
+        )
+
+        Spacer(modifier = Modifier
+            .fillMaxWidth()
+            .height(10.dp)
+        )
+
         Box(modifier = Modifier
             .fillMaxWidth()
             .height(1.dp)
             .background(Color(0xFFDBD6D6))){
-
         }
         Spacer(modifier = Modifier.fillMaxWidth().height(10.dp))
 
@@ -117,9 +99,10 @@ fun eventPost(
  */
 @Composable
 fun publisherBox(
-    image:Int,
+    image:String,
     place:String,
-    username:String
+    username:String,
+    navController: NavController
 ){
     Box(
         modifier = Modifier
@@ -168,9 +151,18 @@ fun publisherBox(
  */
 @Composable
 fun publisherCard(
-    postImage: Int,
+    name:String,
+    username:String,
+    profileImage:String,
+    postImage: String,
+    currentPeople:String,
     placeDescription:String,
-    currentPeople:Int
+    ubication:String,
+    rating:String,
+    latitude:String,
+    longitude:String,
+    longDescription: String,
+    navController: NavController
 ) {
 
 
@@ -185,7 +177,10 @@ fun publisherCard(
                 shape = RoundedCornerShape(15.dp) // Set rounded corners
             )
             .clickable {
-                print("Place clicked")
+                navController.navigate(Model.ExploreScreenDetails.withArgs(
+                    name,longDescription,ubication,rating,Uri.encode(postImage)
+                ))
+                println("Args success passed :)")
             }
 
 
@@ -218,7 +213,7 @@ fun publisherCard(
 @Composable
 fun placeDescription(
     userDescription:String,
-    currentUsers:Int
+    currentUsers:String
 ){
     Box(
         modifier = Modifier
@@ -281,11 +276,11 @@ fun placeDescription(
 
 @Composable
 fun postImage(
-    image:Int
+    image:String
 ){
     Image(
 
-        painter = painterResource(id = image),
+        painter = rememberImagePainter(image),
         contentDescription = null,
         contentScale = ContentScale.Crop
     )
@@ -294,7 +289,7 @@ fun postImage(
 
 @Composable
 fun imageProfile(
-    image:Int,
+    image:String,
     place:String
 ){
     Image(
@@ -302,9 +297,9 @@ fun imageProfile(
             .size(40.dp)
             .clip(CircleShape)
             .clickable {
-                       print("Profile clicked")
+
             },
-        painter = painterResource(id = image),
+        painter = rememberImagePainter(image),
         contentDescription = place,
         contentScale = ContentScale.Crop
     )

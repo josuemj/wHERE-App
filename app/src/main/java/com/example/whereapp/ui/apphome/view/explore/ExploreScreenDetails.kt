@@ -1,9 +1,6 @@
 package com.example.whereapp.ui.apphome.view.explore
-import BottonNagivationApp
-import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.material.Scaffold
-import com.example.whereapp.ui.map.view.MapScreen
 import androidx.compose.runtime.Composable
 
 import androidx.navigation.NavController
@@ -25,12 +22,10 @@ import androidx.compose.ui.Modifier
 
 import androidx.compose.ui.unit.dp
 
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
-import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Face
@@ -38,24 +33,30 @@ import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 
 import coil.compose.rememberImagePainter
+import com.example.whereapp.navigation.BottonBarModel
 import com.example.whereapp.navigation.Model
 
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun ExploreScreen(navController: NavController, place: Place) {
+fun ExploreScreenDetails(
+    navController: NavController,
+    name:String,
+    longDescription:String,
+    ubication:String,
+    rating:String,
+    postImage:String,
+) {
     Scaffold(
-        bottomBar = {
-            BottonNagivationApp(navController)
-        },
         topBar = { topAppBar() }
-    ) {
-        LazyColumn {
+    ) {innerPadding->
+        LazyColumn (
+            modifier = Modifier
+                .padding(innerPadding)
+        ){
             item {
                 // Aquí va tu Box con la imagen y los iconos
                 Box(
@@ -65,7 +66,9 @@ fun ExploreScreen(navController: NavController, place: Place) {
                 ) {
                     // Imagen
                     Image(
-                        painter = rememberImagePainter(place.photo),
+                        painter = rememberImagePainter(
+                            postImage
+                        ),
                         contentDescription = null,
                         modifier = Modifier
                             .fillMaxWidth()
@@ -76,7 +79,9 @@ fun ExploreScreen(navController: NavController, place: Place) {
                     // Iconos en la esquina superior izquierda y derecha
                     // Icono de flecha hacia atrás
                     IconButton(
-                        onClick = { /* TODO: Acción al hacer clic en el icono */ },
+                        onClick = {
+                                  navController.navigate(BottonBarModel.HomeScreen.route)
+                                  },
                         modifier = Modifier
                             .align(Alignment.TopStart)
                             .padding(16.dp)
@@ -157,7 +162,7 @@ fun ExploreScreen(navController: NavController, place: Place) {
 
                 // Texto "Vento" en negritas
                 Text(
-                    text = place.name,
+                    text = name,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(start = 16.dp, top = 8.dp)
                 )
@@ -175,7 +180,7 @@ fun ExploreScreen(navController: NavController, place: Place) {
                     Icon(imageVector = Icons.Default.LocationOn, contentDescription = "Ubicación")
 
                     // Texto "Zona 10" a la derecha del icono de ubicación
-                    Text(text = place.ubication, modifier = Modifier.padding(start = 8.dp))
+                    Text(text = ubication, modifier = Modifier.padding(start = 8.dp))
 
                     Spacer(modifier = Modifier.weight(1f)) // Esto empujará el icono de estrella y el texto "5.0" hacia la derecha
 
@@ -187,7 +192,7 @@ fun ExploreScreen(navController: NavController, place: Place) {
                     }
 
                     // Texto "5.0" debajo del icono de estrella
-                    Text(text = place.rating, modifier = Modifier.padding(end = 8.dp))
+                    Text(text = rating, modifier = Modifier.padding(end = 8.dp))
                 }
             }
 
@@ -206,7 +211,7 @@ fun ExploreScreen(navController: NavController, place: Place) {
             item {
                 // Párrafo de Lorem Ipsum
                 Text(
-                    text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    text = longDescription,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp),
@@ -220,9 +225,9 @@ fun ExploreScreen(navController: NavController, place: Place) {
                     onClick = {
                         navController.navigate(
                             Model.MapScreen.createRoute(
-                                latitude = place.latitude,
-                                longitude = place.longitude,
-                                title = place.name
+                                latitude = 3.4f,
+                                longitude = 4.5f,
+                                title = "UVG"
                             )
                         )
 

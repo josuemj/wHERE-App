@@ -11,4 +11,7 @@ sealed class BottonBarModel(
     object ExploreScreen : BottonBarModel("explore_screen","Explore", R.drawable.exploreicon)
     object ProfileScreen : BottonBarModel("profile_screen","You",R.drawable.usericon)
     object HomeScreen : BottonBarModel("home_screen","Home",R.drawable.homeicon)
+
+
+
 }

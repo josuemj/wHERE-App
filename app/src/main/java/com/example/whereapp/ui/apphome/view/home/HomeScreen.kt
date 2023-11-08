@@ -32,7 +32,7 @@ fun HomeScreen(navController: NavController){
 
             LazyColumn(
                 modifier = Modifier
-                    .padding(innerPadding)
+                    .padding(innerPadding).padding(12.dp)
             ){
                 items(Events.getData()){post->
                     eventPost(
@@ -41,7 +41,13 @@ fun HomeScreen(navController: NavController){
                         profileImage = post.profileImage,
                         postImage = post.postImage,
                         currentPeople = post.currentPeople,
-                        description = post.description
+                        description = post.description,
+                        longDescription = post.longDescription,
+                        ubication = post.ubication,
+                        rating = post.rating,
+                        latitude = post.latitude,
+                        longitude = post.longitude,
+                        navController = navController
                     )
                 }
             }

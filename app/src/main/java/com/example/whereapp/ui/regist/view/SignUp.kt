@@ -141,13 +141,9 @@ fun SignUpScreen(
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(50),
                     onClick = {
-
-
                         if (passwordState.value.text == passwordConfirmationState.value.text) {
                             state.password = passwordState.value.text
                             viewModel.signIn()
-                            println("getting back")
-                            println("Toast Message: '"+LoginViewModel.staticMessage+"'")
                             Toast.makeText(
                                 context,
                                 LoginViewModel.staticMessage,
