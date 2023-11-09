@@ -44,5 +44,7 @@ fun MainExplorer(
                     ubication = event.ubication,
                     rating = event.rating,
                     postImage = event.postImage,
+                    latitude = event.latitude,
+                    longitude = event.longitude
                 )
 }

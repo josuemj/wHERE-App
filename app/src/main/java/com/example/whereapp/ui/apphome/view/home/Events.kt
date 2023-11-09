@@ -29,9 +29,10 @@ class Events (
                     "One of the best univirsities of C.A",
                     "Zone 16",
                     "4.0",
-                    "23",
-                    "34"
+                    "14.60427953177033",
+                    "-90.49007613679812"
                 ),
+
                 Events("QUO",
                     "quogt",
                     "https://www.quo.com.gt/static/media/img2.3950c46e.png",
@@ -41,8 +42,8 @@ class Events (
                     "Just take a rest",
                     "Zone 4",
                     "4.7",
-                    "23",
-                    "34"
+                    "14.61859600405106",
+                    "-90.51506552684549"
                 ),
                 Events("Ciudad Cayala",
                     "cayalagt",
@@ -53,8 +54,35 @@ class Events (
                     "People joking around",
                     "Zone 16",
                     "5.0",
-                    "23",
-                    "34",
+                    "14.612103744702441",
+                    "-90.48525514939368",
+                ),
+                Events(
+                    "Metrocentro Villa Nueva",
+                    "Metrovillagt",
+                    "https://pbs.twimg.com/profile_images/1134818793404936193/nefOu5bb_400x400.png",
+                    "https://www.vidayexito.net/wp-content/uploads/2018/06/metrocentro.jpg",
+                    "56",
+                    "FNAF release out now",
+                    "El Centro Comercial Metrocentro Villa Nueva da la bienvenida a Cinemark, compañía de la industria c" +
+                            "inematográfica y de entretenimiento en Latinoamérica el cual abre sus puertas para ofrecer a la",
+                    "Villa Nueva",
+                    "3.4",
+                    "14.51348319185099",
+                    "-90.5771595245325"
+                ),
+                Events(
+                    "Carmona Trails",
+                    "carmonatrailag",
+                    "https://www.guatemala.com/fotos/2023/08/Carmona-Trails-885x500.jpg",
+                    "https://a.com.gt/log/imgs/2023/08/carmona-trails.jpg",
+                    "256",
+                    "Race day!",
+                    "Actividades de ciclismo y hiking. La verdad excelente recorrido. Hay restaurante, rico y accesible en precios, solo q se llena, llegar temprano",
+                    "Antigua Guatemala",
+                    "4.9",
+                    "14.51438676674801",
+                    "-90.72170579312606"
                 )
 
 

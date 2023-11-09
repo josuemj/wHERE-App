@@ -178,7 +178,7 @@ fun publisherCard(
             )
             .clickable {
                 navController.navigate(Model.ExploreScreenDetails.withArgs(
-                    name,longDescription,ubication,rating,Uri.encode(postImage)
+                    name,longDescription,ubication,rating,Uri.encode(postImage),latitude,longitude
                 ))
                 println("Args success passed :)")
             }

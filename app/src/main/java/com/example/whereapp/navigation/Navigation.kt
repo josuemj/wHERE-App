@@ -51,7 +51,7 @@ fun Navigation(
         }
         
         composable(route = Model.ExploreScreenDetails.route+
-                "/{name}/{longDescription}/{ubication}/{rating}/{postImage}",
+                "/{name}/{longDescription}/{ubication}/{rating}/{postImage}/{latitude}/{longitude}",
             arguments = listOf(
                 navArgument("name"){
                     type = NavType.StringType
@@ -77,6 +77,16 @@ fun Navigation(
                     type = NavType.StringType
                     defaultValue=""
                     nullable = true
+                },
+                navArgument("latitude"){
+                    type = NavType.StringType
+                    defaultValue=""
+                    nullable = true
+                },
+                navArgument("longitude"){
+                    type = NavType.StringType
+                    defaultValue=""
+                    nullable = true
                 }
 
             )
@@ -89,7 +99,9 @@ fun Navigation(
                 longDescription = entry.arguments?.getString("longDescription")!!,
                 ubication = entry.arguments?.getString("ubication")!!,
                 rating = entry.arguments?.getString("rating")!!,
-                postImage = entry.arguments?.getString("postImage")!!
+                postImage = entry.arguments?.getString("postImage")!!,
+                latitude = entry.arguments?.getString("latitude")!!,
+                longitude = entry.arguments?.getString("longitude")!!
 
             )
         }

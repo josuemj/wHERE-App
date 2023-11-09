@@ -49,6 +49,8 @@ fun ExploreScreenDetails(
     ubication:String,
     rating:String,
     postImage:String,
+    latitude:String,
+    longitude:String
 ) {
     Scaffold(
         topBar = { topAppBar() }
@@ -225,9 +227,9 @@ fun ExploreScreenDetails(
                     onClick = {
                         navController.navigate(
                             Model.MapScreen.createRoute(
-                                latitude = 3.4f,
-                                longitude = 4.5f,
-                                title = "UVG"
+                                latitude = latitude.toFloat(),
+                                longitude = longitude.toFloat(),
+                                title = name,
                             )
                         )
 
