@@ -30,7 +30,7 @@ fun Navigation(
 
     NavHost(
         navController = navController,
-        startDestination = Model.WelcomeScreen.route
+        startDestination = BottonBarModel.HomeScreen.route //Regresar esta linea a Welcome Screen
     ){
 
         composable(route = Model.WelcomeScreen.route){

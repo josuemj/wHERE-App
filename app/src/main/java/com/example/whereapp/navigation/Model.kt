@@ -4,8 +4,8 @@ sealed class Model(val route:String){
     object WelcomeScreen : Model("start_screen")
     object LoginScreen : Model("login_screen")
     object SignUpScreen : Model("signup_screen")
-    object ExploreScreen: Model("explore_screen")
     object ExploreScreenDetails:Model("explore_details")
+
     object MapScreen : Model("map_screen/{latitude}/{longitude}/{title}") {
         fun createRoute(latitude: Float, longitude: Float, title: String) =
             "map_screen/$latitude/$longitude/$title"
@@ -19,7 +19,5 @@ sealed class Model(val route:String){
             }
         }
     }
-
-
 
 }
