@@ -8,6 +8,7 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
 import com.example.whereapp.ui.apphome.view.topbar.topAppBar
 
@@ -18,8 +19,11 @@ import com.example.whereapp.ui.apphome.view.home.Events
 fun MainExplorer(
     navController: NavController,
 ){
+                // Obtener el Context actual de Compose
+                val context = LocalContext.current
 
-                val eventsList = Events.getData()
+                // Ahora puedes pasar este Context a tu método getData()
+                val eventsList = Events.getData(context)
                 val randIndex = (eventsList.indices).random()
 
                 val randomEvent = eventsList[randIndex]

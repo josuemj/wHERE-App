@@ -11,6 +11,7 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -18,6 +19,11 @@ import com.example.whereapp.ui.apphome.view.topbar.topAppBar
 
 @Composable
 fun HomeScreen(navController: NavController){
+    // Obtener el Context actual de Compose
+    val context = LocalContext.current
+
+    // Ahora puedes pasar este Context a tu método getData()
+    val eventsList = Events.getData(context)
 
         Scaffold(
 
@@ -31,10 +37,11 @@ fun HomeScreen(navController: NavController){
         ) { innerPadding ->
 
             LazyColumn(
+
                 modifier = Modifier
                     .padding(innerPadding).padding(12.dp)
             ){
-                items(Events.getData()){post->
+                items(Events.getData(context)){post->
                     eventPost(
                         name = post.name,
                         username = post.username,
