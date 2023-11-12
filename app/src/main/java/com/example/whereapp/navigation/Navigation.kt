@@ -19,6 +19,9 @@ import com.example.whereapp.ui.start.view.WelcomeScreen
 import com.example.whereapp.ui.theme.login.view.LoginScreen
 import com.example.whereapp.ui.login.view.LoginViewModel
 import com.example.whereapp.ui.map.view.MapScreen
+import com.example.whereapp.ui.apphome.viewModel.profile.LanguageViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
+
 
 
 @Composable
@@ -27,6 +30,7 @@ fun Navigation(
 ){
 
     val navController = rememberNavController()
+    val languageViewModel: LanguageViewModel = viewModel()
 
     NavHost(
         navController = navController,
@@ -116,7 +120,7 @@ fun Navigation(
         }
 
         composable(route = BottonBarModel.ProfileScreen.route){
-            ProfileScreen(navController)
+            ProfileScreen(navController, languageViewModel)
         }
         
         composable(

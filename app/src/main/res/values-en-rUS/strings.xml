@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">whereapp</string>
+    <!-- PLACES -->
+
+    <!-- Universidad del Valle -->
+    <string name="event_name_universidad_valle">University of Valle</string>
+    <string name="event_username_universidad_valle">uvgedugt</string>
+    <string name="event_description_universidad_valle">U.S. president on the field</string>
+    <string name="event_long_description_universidad_valle">One of the best universities in Central America</string>
+    <string name="event_ubication_universidad_valle">Zone 16</string>
+    <string name="event_rating_universidad_valle">4.0</string>
+
+    <!-- QUO -->
+    <string name="event_name_quo">QUO</string>
+    <string name="event_username_quo">quogt</string>
+    <string name="event_description_quo">Armies on the field</string>
+    <string name="event_long_description_quo">Just take a rest</string>
+    <string name="event_ubication_quo">Zone 4</string>
+    <string name="event_rating_quo">4.7</string>
+
+    <!-- Ciudad Cayala -->
+    <string name="event_name_ciudad_cayala">Ciudad Cayala</string>
+    <string name="event_username_ciudad_cayala">cayalagt</string>
+    <string name="event_description_ciudad_cayala">Oliver Heldens Rounding</string>
+    <string name="event_long_description_ciudad_cayala">People joking around</string>
+    <string name="event_ubication_ciudad_cayala">Zone 16</string>
+    <string name="event_rating_ciudad_cayala">5.0</string>
+
+    <!-- Metrocentro Villa Nueva -->
+    <string name="event_name_metrocentro">Metrocentro Villa Nueva</string>
+    <string name="event_username_metrocentro">Metrovillagt</string>
+    <string name="event_description_metrocentro">FNAF release out now</string>
+    <string name="event_long_description_metrocentro">Metrocentro Villa Nueva Shopping Center welcomes Cinemark, a leading company in the film and entertainment industry in Latin America, which opens its doors to offer the community a unique entertainment experience.</string>
+    <string name="event_ubication_metrocentro">Villa Nueva</string>
+    <string name="event_rating_metrocentro">3.4</string>
+
+    <!-- Carmona Trails -->
+    <string name="event_name_carmona_trails">Carmona Trails</string>
+    <string name="event_username_carmona_trails">carmonatrailag</string>
+    <string name="event_description_carmona_trails">Race day!</string>
+    <string name="event_long_description_carmona_trails">Cycling and hiking activities. Truly an excellent route. There s a restaurant thats tasty and reasonably priced, but it fills up, so arrive early.</string>
+    <string name="event_ubication_carmona_trails">Antigua Guatemala</string>
+    <string name="event_rating_carmona_trails">4.9</string>
+
+
+</resources>

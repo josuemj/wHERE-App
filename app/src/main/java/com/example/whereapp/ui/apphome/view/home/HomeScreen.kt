@@ -17,13 +17,12 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.whereapp.ui.apphome.view.topbar.topAppBar
 
+@SuppressLint("SuspiciousIndentation")
 @Composable
 fun HomeScreen(navController: NavController){
     // Obtener el Context actual de Compose
     val context = LocalContext.current
 
-    // Ahora puedes pasar este Context a tu método getData()
-    val eventsList = Events.getData(context)
 
         Scaffold(
 
