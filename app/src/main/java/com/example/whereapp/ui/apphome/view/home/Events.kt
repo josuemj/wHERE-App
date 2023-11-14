@@ -1,5 +1,6 @@
 package com.example.whereapp.ui.apphome.view.home
 
+import com.example.whereapp.R
 
 class Events (
     val name:String,
