@@ -1,5 +1,6 @@
 package com.example.whereapp.ui.apphome.view.home
 
+import android.content.Context
 import com.example.whereapp.R
 
 class Events (
@@ -18,7 +19,7 @@ class Events (
 
     companion object{
 
-        fun getData():List<Events>{
+        fun getData(context: Context):List<Events>{
             val eventList = listOf(
                 Events("Universidad del Valle",
                     "uvgedugt",
