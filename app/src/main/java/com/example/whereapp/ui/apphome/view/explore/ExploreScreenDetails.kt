@@ -33,6 +33,7 @@ import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -54,6 +55,8 @@ fun ExploreScreenDetails(
     latitude:String,
     longitude:String
 ) {
+    val context = LocalContext.current
+    // Acceder a los recursos de dimensiones
     Scaffold(
         topBar = { topAppBar() }
     ) {innerPadding->
@@ -75,7 +78,7 @@ fun ExploreScreenDetails(
                         contentDescription = null,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(300.dp),
+                            .height(context.resources.getDimension(R.dimen.image_size_big).dp),
                         contentScale = ContentScale.Crop
                     )
                     IconButton(
@@ -84,7 +87,7 @@ fun ExploreScreenDetails(
                                   },
                         modifier = Modifier
                             .align(Alignment.TopStart)
-                            .padding(16.dp)
+                            .padding(context.resources.getDimension(R.dimen.padding_small).dp)
                     ) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
@@ -95,7 +98,8 @@ fun ExploreScreenDetails(
                     Row(
                         modifier = Modifier
                             .align(Alignment.TopEnd)
-                            .padding(16.dp)
+                            .padding(context.resources.getDimension(R.dimen.padding_small).dp)
+
                     ) {
                         IconButton(
                             onClick = { /* TODO: Acción al hacer clic en el icono */ }
@@ -123,7 +127,7 @@ fun ExploreScreenDetails(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp)
+                        .padding(context.resources.getDimension(R.dimen.padding_small).dp)
                         .background(Color.Gray),
 
 
@@ -189,7 +193,7 @@ fun ExploreScreenDetails(
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp),
+                        .padding(context.resources.getDimension(R.dimen.padding_small).dp),
                     textAlign = TextAlign.Left
                 )
             }
@@ -199,7 +203,7 @@ fun ExploreScreenDetails(
                     text = longDescription,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp),
+                        .padding(context.resources.getDimension(R.dimen.padding_small).dp),
                     textAlign = TextAlign.Justify
                 )
             }
@@ -218,7 +222,7 @@ fun ExploreScreenDetails(
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(16.dp),
+                        .padding(context.resources.getDimension(R.dimen.padding_small).dp),
                     colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.especial_yellow)),
                     elevation = ButtonDefaults.elevation(
                         defaultElevation = 8.dp,

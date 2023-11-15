@@ -76,7 +76,7 @@ fun SignUpScreen(
                 .background(MaterialTheme.colors.surface)
         ) {
             Column(
-                modifier = Modifier.padding(16.dp),
+                modifier = Modifier.padding(context.resources.getDimension(R.dimen.padding_small).dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
@@ -84,7 +84,7 @@ fun SignUpScreen(
                     fontWeight = FontWeight.Bold,
                     style = MaterialTheme.typography.h6,
                     color = colorResource(id = R.color.metal_gray),
-                    fontSize = 50.sp,
+                    fontSize = context.resources.getDimension(R.dimen.text_size_big).sp,
                     modifier = Modifier.padding(bottom = 30.dp)
                 )
 
@@ -95,7 +95,7 @@ fun SignUpScreen(
                     label = { Text("Email") },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(bottom = 20.dp),
+                        .padding(bottom = context.resources.getDimension(R.dimen.padding_medium).dp),
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Person,
@@ -110,7 +110,7 @@ fun SignUpScreen(
                     label = { Text("Password") },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(bottom = 20.dp),
+                        .padding(bottom = context.resources.getDimension(R.dimen.padding_medium).dp),
                     visualTransformation = PasswordVisualTransformation(),
                     leadingIcon = {
                         Icon(
@@ -128,7 +128,7 @@ fun SignUpScreen(
                     visualTransformation = PasswordVisualTransformation(),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(bottom = 20.dp),
+                        .padding(bottom = context.resources.getDimension(R.dimen.padding_medium).dp),
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Lock,
@@ -163,8 +163,7 @@ fun SignUpScreen(
                 {
                     Text("Sign Up",
                         color = Color.White,
-                        fontSize = 20.sp,)
-
+                        fontSize = context.resources.getDimension(R.dimen.text_size_tiny).sp,)
                 }
 
 

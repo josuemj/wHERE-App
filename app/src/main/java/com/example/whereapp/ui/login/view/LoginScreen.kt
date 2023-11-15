@@ -39,6 +39,7 @@ fun LoginScreen(
     val context = LocalContext.current
     val state = viewModel.state
 
+
     Box(modifier = Modifier.fillMaxSize()) {
         // Background image
         Image(
@@ -51,13 +52,13 @@ fun LoginScreen(
         // "wHERE" text positioned higher
         Text(
             "wHERE",
-            fontSize = 48.sp,
+            fontSize = context.resources.getDimension(R.dimen.text_size_medium).sp,
             fontWeight = FontWeight.Bold,
             style = MaterialTheme.typography.h4,
             color = MaterialTheme.colors.surface,
             modifier = Modifier
                 .align(Alignment.TopCenter)
-                .offset(y = 170.dp)  // Comentario: Modifica el valor de y aquí para ajustar la posición vertical del texto. Por ejemplo, usa 150.dp para elevarlo más.
+                .offset(y = 170.dp)
         )
 
         // Enclosing box from the middle of the screen to the bottom
@@ -78,10 +79,9 @@ fun LoginScreen(
                     fontWeight = FontWeight.Bold,
                     style = MaterialTheme.typography.h6,
                     color = colorResource(id = R.color.metal_gray),
-                    fontSize = 40.sp,
+                    fontSize = context.resources.getDimension(R.dimen.text_size_small).sp,
                     modifier = Modifier.padding(bottom = 30.dp)
                 )
-
 
                 TextField(
                     modifier = Modifier
@@ -133,7 +133,7 @@ fun LoginScreen(
                 {
                     Text("Login",
                         color = Color.White,
-                        fontSize = 20.sp,)
+                        fontSize = context.resources.getDimension(R.dimen.text_size_tiny).sp ,)
 
                 }
 

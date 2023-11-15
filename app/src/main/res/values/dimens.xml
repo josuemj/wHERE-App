@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tamaños de texto -->
+    <dimen name="text_size_stiny">20sp</dimen>
+    <dimen name="text_size_tiny">20sp</dimen>
+    <dimen name="text_size_small">40sp</dimen>
+    <dimen name="text_size_medium">48sp</dimen>
+    <dimen name="text_size_big">50sp</dimen>
+
+    <!-- Box -->
+    <dimen name="box_small">200dp</dimen>
+  
+
+    <!-- Tamaño de los padding -->
+    <dimen name="padding_tiny">12dp</dimen>
+    <dimen name="padding_small">16dp</dimen>
+    <dimen name="padding_medium">20dp</dimen>
+
+    <!-- Tamaño de los spacer -->
+    <dimen name="spacer_medium">500dp</dimen>
+    
+
+
+    <!-- Tamaño de las imagenes -->
+    <dimen name="image_size_small">24dp</dimen>
+    <dimen name="image_size_medium">24dp</dimen>
+    <dimen name="image_size_big">300dp</dimen>
+
+</resources>

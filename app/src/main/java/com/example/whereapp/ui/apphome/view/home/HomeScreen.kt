@@ -15,6 +15,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.whereapp.R
 import com.example.whereapp.ui.apphome.view.topbar.topAppBar
 
 @SuppressLint("SuspiciousIndentation")
@@ -37,7 +38,8 @@ fun HomeScreen(navController: NavController){
             LazyColumn(
 
                 modifier = Modifier
-                    .padding(innerPadding).padding(12.dp)
+                    .padding(innerPadding)
+                    .padding((context.resources.getDimension(R.dimen.padding_tiny).dp))
             ){
                 items(Events.getData(context)){post->
                     eventPost(
@@ -59,7 +61,7 @@ fun HomeScreen(navController: NavController){
             Spacer(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(500.dp)
+                    .height(context.resources.getDimension(R.dimen.spacer_medium).dp)
             )
         }
 

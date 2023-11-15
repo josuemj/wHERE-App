@@ -64,13 +64,14 @@ fun ProfileScreen(navController: NavController, languageViewModel: LanguageViewM
 
 @Composable
 fun Profile(languageViewModel: LanguageViewModel){
+    val context = LocalContext.current
     Column(
         modifier = Modifier.fillMaxWidth()
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(200.dp)
+                .height((context.resources.getDimension(R.dimen.box_small).dp))
             // Set the size of the box
             , contentAlignment = Alignment.Center
         ) {
@@ -87,10 +88,10 @@ fun Profile(languageViewModel: LanguageViewModel){
         }
 
         Setting(icon = R.drawable.icon_user , settingName = "Edit Profile"){
-            // Define lo que sucede cuando se hace clic en Edit Profile
+
         }
         Setting(icon = R.drawable.icon_about , settingName = "About") {
-            // Define lo que sucede cuando se hace clic en About
+
         }
 
         Setting(icon = R.drawable.icon_langauge,

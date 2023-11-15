@@ -14,6 +14,7 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -23,6 +24,7 @@ import com.example.whereapp.navigation.Model
 
 @Composable
 fun WelcomeScreen(navController: NavController) {
+    val context = LocalContext.current
     // Background image
     Image(
         painter = painterResource(id = R.drawable.welcome_background),
@@ -44,14 +46,13 @@ fun WelcomeScreen(navController: NavController) {
             fontWeight = FontWeight.Bold,
             color = Color.White
 
-
         )
 
         Spacer(modifier = Modifier.height(8.dp))
 
         Text(
             text = "How, when, where?",
-            fontSize = 20.sp,
+            fontSize = context.resources.getDimension(R.dimen.text_size_tiny).sp,
             color = Color.White
         )
 
@@ -68,7 +69,7 @@ fun WelcomeScreen(navController: NavController) {
             colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
         ) {
             Text(text = "REGISTER NOW",
-                fontSize = 18.sp,
+                fontSize = context.resources.getDimension(R.dimen.text_size_stiny).sp,
                 color = colorResource(id = R.color.shart))
         }
 
@@ -86,7 +87,7 @@ fun WelcomeScreen(navController: NavController) {
 
         ) {
             Text(text = "      LOGIN      ",
-                fontSize = 18.sp,
+                fontSize = context.resources.getDimension(R.dimen.text_size_stiny).sp,
                 color = colorResource(id = R.color.shart))
         }
     }
