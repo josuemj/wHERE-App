@@ -81,7 +81,6 @@ fun MapScreen(navController: NavController, latitude: Double, longitude: Double,
                 Marker(position = marker, title = title)
             }
 
-            // Botones para controlar el zoom del mapa
             Column(
                 modifier = Modifier
                     .align(Alignment.TopEnd)

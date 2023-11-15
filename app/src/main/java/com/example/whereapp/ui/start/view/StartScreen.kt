@@ -14,6 +14,7 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
@@ -68,7 +69,7 @@ fun WelcomeScreen(navController: NavController) {
         ) {
             Text(text = "REGISTER NOW",
                 fontSize = 18.sp,
-                color = Color(0xFFF8049C))
+                color = colorResource(id = R.color.shart))
         }
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -86,7 +87,7 @@ fun WelcomeScreen(navController: NavController) {
         ) {
             Text(text = "      LOGIN      ",
                 fontSize = 18.sp,
-                color = Color(0xFFF8049C))
+                color = colorResource(id = R.color.shart))
         }
     }
 }

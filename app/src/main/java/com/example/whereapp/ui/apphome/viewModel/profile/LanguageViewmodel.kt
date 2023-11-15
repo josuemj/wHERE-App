@@ -16,6 +16,5 @@ class LanguageViewModel : ViewModel() {
         } else {
             Locale("es")
         }
-        // Aquí agregarías el código para persistir la selección del idioma si es necesario
     }
 }

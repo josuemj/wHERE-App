@@ -20,7 +20,6 @@ import com.example.whereapp.ui.apphome.view.topbar.topAppBar
 @SuppressLint("SuspiciousIndentation")
 @Composable
 fun HomeScreen(navController: NavController){
-    // Obtener el Context actual de Compose
     val context = LocalContext.current
 
 

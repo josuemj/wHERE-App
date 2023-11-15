@@ -32,18 +32,34 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 fun ProfileScreen(navController: NavController, languageViewModel: LanguageViewModel){
+    var locale by remember { mutableStateOf(Locale("en")) }
+    val configuration = LocalConfiguration.current
+    val context = LocalContext.current
+
+    // Aquí se crea una nueva configuración con la locale seleccionada y se actualiza el contexto.
+    val contextWithNewLocale = context.createConfigurationContext(configuration.apply { setLocale(locale) })
+    val resources = contextWithNewLocale.resources
+
     Scaffold(
         bottomBar = {
             BottonNagivationApp(navController)
         },
         topBar = { topAppBar() }
-
-    ) {
-        Column {
+    ) { paddingValues ->
+        Column(
+            modifier = Modifier.padding(paddingValues)
+        ) {
+            // El contenido del Scaffold va aquí
             Profile(languageViewModel)
+            Button(onClick = {
+                //locale = if (locale.language == "es") Locale( "es") else Locale("es")
+            }) {
+                // Texto del botón o contenido va aquí
+            }
         }
-
     }
+
+
 }
 
 @Composable
@@ -87,8 +103,8 @@ fun Profile(languageViewModel: LanguageViewModel){
             // Define lo que sucede cuando se hace clic en Policy privacy
         }
 
-
     }
+
 }
 
 

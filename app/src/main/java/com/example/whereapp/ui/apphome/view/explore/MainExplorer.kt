@@ -19,10 +19,8 @@ import com.example.whereapp.ui.apphome.view.home.Events
 fun MainExplorer(
     navController: NavController,
 ){
-                // Obtener el Context actual de Compose
                 val context = LocalContext.current
 
-                // Ahora puedes pasar este Context a tu método getData()
                 val eventsList = Events.getData(context)
                 val randIndex = (eventsList.indices).random()
 

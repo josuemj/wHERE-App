@@ -33,10 +33,12 @@ import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 
 import coil.compose.rememberImagePainter
+import com.example.whereapp.R
 import com.example.whereapp.navigation.BottonBarModel
 import com.example.whereapp.navigation.Model
 
@@ -60,13 +62,12 @@ fun ExploreScreenDetails(
                 .padding(innerPadding)
         ){
             item {
-                // Aquí va tu Box con la imagen y los iconos
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(Color.Gray)
                 ) {
-                    // Imagen
+
                     Image(
                         painter = rememberImagePainter(
                             postImage
@@ -77,9 +78,6 @@ fun ExploreScreenDetails(
                             .height(300.dp),
                         contentScale = ContentScale.Crop
                     )
-
-                    // Iconos en la esquina superior izquierda y derecha
-                    // Icono de flecha hacia atrás
                     IconButton(
                         onClick = {
                                   navController.navigate(BottonBarModel.HomeScreen.route)
@@ -94,13 +92,11 @@ fun ExploreScreenDetails(
                             tint = Color.White
                         )
                     }
-                    // Iconos en la esquina superior derecha
                     Row(
                         modifier = Modifier
                             .align(Alignment.TopEnd)
                             .padding(16.dp)
                     ) {
-                        // Icono de favorito
                         IconButton(
                             onClick = { /* TODO: Acción al hacer clic en el icono */ }
                         ) {
@@ -110,8 +106,6 @@ fun ExploreScreenDetails(
                                 tint = Color.White
                             )
                         }
-
-                        // Icono de more vert
                         IconButton(
                             onClick = { /* TODO: Acción al hacer clic en el icono */ }
                         ) {
@@ -126,8 +120,6 @@ fun ExploreScreenDetails(
             }
 
             item {
-                // Aquí va tu Row con los iconos y textos
-                // Fila con iconos y fondo de imagen
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -161,8 +153,6 @@ fun ExploreScreenDetails(
             }
 
             item {
-
-                // Texto "Vento" en negritas
                 Text(
                     text = name,
                     fontWeight = FontWeight.Bold,
@@ -171,35 +161,29 @@ fun ExploreScreenDetails(
             }
 
             item {
-
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(start = 16.dp, top = 8.dp, end = 16.dp, bottom = 8.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    // Icono de ubicación
                     Icon(imageVector = Icons.Default.LocationOn, contentDescription = "Ubicación")
 
-                    // Texto "Zona 10" a la derecha del icono de ubicación
                     Text(text = ubication, modifier = Modifier.padding(start = 8.dp))
 
-                    Spacer(modifier = Modifier.weight(1f)) // Esto empujará el icono de estrella y el texto "5.0" hacia la derecha
+                    Spacer(modifier = Modifier.weight(1f))
 
-                    // Icono de estrella con acción al hacer clic
                     IconButton(onClick = {
                         // TODO: Acción al hacer clic en el icono de estrella
                     }) {
                         Icon(imageVector = Icons.Default.Star, contentDescription = "Calificación")
                     }
 
-                    // Texto "5.0" debajo del icono de estrella
                     Text(text = rating, modifier = Modifier.padding(end = 8.dp))
                 }
             }
 
             item {
-                // Texto "Description" en negritas
                 Text(
                     text = "Description",
                     fontWeight = FontWeight.Bold,
@@ -211,7 +195,6 @@ fun ExploreScreenDetails(
             }
 
             item {
-                // Párrafo de Lorem Ipsum
                 Text(
                     text = longDescription,
                     modifier = Modifier
@@ -222,7 +205,6 @@ fun ExploreScreenDetails(
             }
 
             item {
-                // Botón "Go"
                 Button(
                     onClick = {
                         navController.navigate(
@@ -237,11 +219,11 @@ fun ExploreScreenDetails(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(16.dp),
-                    colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFFFC138)),
+                    colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.especial_yellow)),
                     elevation = ButtonDefaults.elevation(
-                        defaultElevation = 8.dp, // Elevación por defecto
-                        pressedElevation = 12.dp, // Elevación cuando el botón está presionado
-                        disabledElevation = 0.dp // Elevación cuando el botón está deshabilitado
+                        defaultElevation = 8.dp,
+                        pressedElevation = 12.dp,
+                        disabledElevation = 0.dp
                     )
                 ) {
                     Text(text = "Go")

@@ -20,6 +20,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.text.font.FontWeight
@@ -54,7 +55,9 @@ fun LoginScreen(
             fontWeight = FontWeight.Bold,
             style = MaterialTheme.typography.h4,
             color = MaterialTheme.colors.surface,
-            modifier = Modifier.align(Alignment.TopCenter).offset(y = 170.dp)  // Comentario: Modifica el valor de y aquí para ajustar la posición vertical del texto. Por ejemplo, usa 150.dp para elevarlo más.
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .offset(y = 170.dp)  // Comentario: Modifica el valor de y aquí para ajustar la posición vertical del texto. Por ejemplo, usa 150.dp para elevarlo más.
         )
 
         // Enclosing box from the middle of the screen to the bottom
@@ -62,7 +65,7 @@ fun LoginScreen(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .fillMaxWidth()
-                .fillMaxHeight(0.60f)  // Comentario: Modifica este valor para ajustar la posición vertical de la Box. Por ejemplo, usa 0.4f para elevarla más.
+                .fillMaxHeight(0.60f)
                 .clip(RoundedCornerShape(16.dp))
                 .background(MaterialTheme.colors.surface)
         ) {
@@ -74,14 +77,12 @@ fun LoginScreen(
                     "Login",
                     fontWeight = FontWeight.Bold,
                     style = MaterialTheme.typography.h6,
-                    color = Color(0xFF595B70),
+                    color = colorResource(id = R.color.metal_gray),
                     fontSize = 40.sp,
                     modifier = Modifier.padding(bottom = 30.dp)
                 )
 
-                /**
-                 * Email text field
-                 */
+
                 TextField(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -97,9 +98,6 @@ fun LoginScreen(
                     }
                 )
 
-                /**
-                 * Password text field
-                 */
                 TextField(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -131,7 +129,7 @@ fun LoginScreen(
                                         navController.navigate(BottonBarModel.HomeScreen.route)
                                     }
                                  },
-                    colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFFA378A)))
+                    colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.especial_magenta)))
                 {
                     Text("Login",
                         color = Color.White,

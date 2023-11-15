@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Daylight Colors-->
+    <color name="especial_magenta">#FFFA378A</color>
+    <color name="metal_gray">#FF595B70</color>
+    <color name="especial_yellow">#FFFFC138</color>
+    <color name="shart">#FFF8049C</color>
+    
 </resources>
