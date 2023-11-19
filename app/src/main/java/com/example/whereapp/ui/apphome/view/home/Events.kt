@@ -88,7 +88,7 @@ class Events (
                 Events(
                     "Aurora Zoo",
                     "aurzoogt",
-                    "https://upload.wikimedia.org/wikipedia/commons/4/4b/Zool%C3%B3gico_de_Guatemala_%282016%29.jpg",
+                    "https://www.guatemala.com/fotos/2023/02/El-Zoo-La-Aurora-ofrece-un-nuevo-tour-para-interactuar-con-pinguinos-en-Guatemala.jpg",
                     "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6a/a6/5f.jpg",
                     "999",
                     "New friends available",
