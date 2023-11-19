@@ -88,8 +88,8 @@ class Events (
                 Events(
                     "Aurora Zoo",
                     "aurzoogt",
-                    "https://www.publinews.gt/gt/wp-content/uploads/2021/03/zoologico-la-aurora-publinews.jpg",
-                    "https://agn.gt/wp-content/uploads/2023/07/zoo-1.jpg",
+                    "https://upload.wikimedia.org/wikipedia/commons/4/4b/Zool%C3%B3gico_de_Guatemala_%282016%29.jpg",
+                    "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6a/a6/5f.jpg",
                     "999",
                     "New friends available",
                     "Ciudad de Guatemala, 13 jul (AGN).- El Zoológico La Aurora presentó " +
