@@ -84,8 +84,23 @@ class Events (
                     "4.9",
                     "14.51438676674801",
                     "-90.72170579312606"
+                ),
+                Events(
+                    "Aurora Zoo",
+                    "aurzoogt",
+                    "https://www.publinews.gt/gt/wp-content/uploads/2021/03/zoologico-la-aurora-publinews.jpg",
+                    "https://agn.gt/wp-content/uploads/2023/07/zoo-1.jpg",
+                    "999",
+                    "New friends available",
+                    "Ciudad de Guatemala, 13 jul (AGN).- El Zoológico La Aurora presentó " +
+                            "de manera oficial tres nuevos espacios de atracción para el público. " +
+                            "Se trata de la Explanada de Balam, un nuevo recinto para flamencos del Caribe y " +
+                            "un teatro educativo.",
+                    "Guatemala City Z13",
+                    "4.9",
+                    "14.5986739",
+                    "-90.525828"
                 )
-
 
 
             )
