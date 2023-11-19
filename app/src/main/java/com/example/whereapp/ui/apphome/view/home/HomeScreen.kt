@@ -39,7 +39,7 @@ fun HomeScreen(navController: NavController){
 
                 modifier = Modifier
                     .padding(innerPadding)
-                    .padding((context.resources.getDimension(R.dimen.padding_tiny).dp))
+                    .padding((context.resources.getDimension(R.dimen.home_padding).dp))
             ){
                 items(Events.getData(context)){post->
                     eventPost(

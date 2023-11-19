@@ -87,7 +87,7 @@ fun ExploreScreenDetails(
                                   },
                         modifier = Modifier
                             .align(Alignment.TopStart)
-                            .padding(context.resources.getDimension(R.dimen.padding_small).dp)
+                            .padding(context.resources.getDimension(R.dimen.padding_tiny).dp)
                     ) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
@@ -98,7 +98,7 @@ fun ExploreScreenDetails(
                     Row(
                         modifier = Modifier
                             .align(Alignment.TopEnd)
-                            .padding(context.resources.getDimension(R.dimen.padding_small).dp)
+                            .padding(context.resources.getDimension(R.dimen.padding_tiny).dp)
 
                     ) {
                         IconButton(
@@ -127,7 +127,7 @@ fun ExploreScreenDetails(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(context.resources.getDimension(R.dimen.padding_small).dp)
+                        .padding(context.resources.getDimension(R.dimen.padding_tiny).dp)
                         .background(Color.Gray),
 
 
@@ -193,7 +193,7 @@ fun ExploreScreenDetails(
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(context.resources.getDimension(R.dimen.padding_small).dp),
+                        .padding(context.resources.getDimension(R.dimen.padding_tiny).dp),
                     textAlign = TextAlign.Left
                 )
             }
@@ -203,7 +203,7 @@ fun ExploreScreenDetails(
                     text = longDescription,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(context.resources.getDimension(R.dimen.padding_small).dp),
+                        .padding(context.resources.getDimension(R.dimen.padding_tiny).dp),
                     textAlign = TextAlign.Justify
                 )
             }

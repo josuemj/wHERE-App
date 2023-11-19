@@ -21,7 +21,8 @@ import com.example.whereapp.ui.login.view.LoginViewModel
 import com.example.whereapp.ui.map.view.MapScreen
 import com.example.whereapp.ui.apphome.viewModel.profile.LanguageViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-
+import com.example.whereapp.ui.aboutscreen.view.AboutScreen
+import com.example.whereapp.ui.privacypolicy.view.PrivacyScreen
 
 
 @Composable
@@ -137,6 +138,14 @@ fun Navigation(
                 longitude = backStackEntry.arguments?.getFloat("longitude")?.toDouble() ?: 0.0,
                 title = backStackEntry.arguments?.getString("title") ?: ""
             )
+        }
+
+        composable(route = Model.PrivacyScreen.route){
+            PrivacyScreen(navController)
+        }
+
+        composable(route = Model.AboutScreen.route){
+            AboutScreen(navController)
         }
 
     }

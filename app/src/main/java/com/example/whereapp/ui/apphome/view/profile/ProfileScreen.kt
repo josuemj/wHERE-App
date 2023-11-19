@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 
@@ -26,7 +27,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-
+import com.example.whereapp.navigation.Model
 
 
 @Composable
@@ -47,10 +48,9 @@ fun ProfileScreen(navController: NavController, languageViewModel: LanguageViewM
         topBar = { topAppBar() }
     ) { paddingValues ->
         Column(
-            modifier = Modifier.padding(paddingValues)
         ) {
             // El contenido del Scaffold va aquí
-            Profile(languageViewModel)
+            Profile(languageViewModel,navController)
             Button(onClick = {
                 //locale = if (locale.language == "es") Locale( "es") else Locale("es")
             }) {
@@ -63,7 +63,7 @@ fun ProfileScreen(navController: NavController, languageViewModel: LanguageViewM
 }
 
 @Composable
-fun Profile(languageViewModel: LanguageViewModel){
+fun Profile(languageViewModel: LanguageViewModel,navController: NavController){
     val context = LocalContext.current
     Column(
         modifier = Modifier.fillMaxWidth()
@@ -71,17 +71,27 @@ fun Profile(languageViewModel: LanguageViewModel){
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height((context.resources.getDimension(R.dimen.box_small).dp))
+                .height((context.resources.getDimension(R.dimen.box_tiny).dp))
             // Set the size of the box
             , contentAlignment = Alignment.Center
         ) {
-            Column() {
+            Image(
+                contentScale = ContentScale.Crop,
+                painter = painterResource(id = R.drawable.barra),
+                contentDescription = null,
+                modifier = Modifier.fillMaxSize()
+            )
+
+            Column(
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
                 Image(painter = painterResource(id = R.drawable.icon_user),
                     contentDescription = null,
                     modifier = Modifier
                         .clip(RoundedCornerShape(50))
                 )
-                Text(text = "Name")
+                Text(text = "You")
                 Text("@User name")
             }
 
@@ -91,7 +101,7 @@ fun Profile(languageViewModel: LanguageViewModel){
 
         }
         Setting(icon = R.drawable.icon_about , settingName = "About") {
-
+            navController.navigate(Model.AboutScreen.route)
         }
 
         Setting(icon = R.drawable.icon_langauge,
@@ -101,7 +111,7 @@ fun Profile(languageViewModel: LanguageViewModel){
 
         }
         Setting(icon = R.drawable.icon_privacy , settingName = "Policy privacy"){
-            // Define lo que sucede cuando se hace clic en Policy privacy
+            navController.navigate(Model.PrivacyScreen.route)
         }
 
     }
@@ -129,17 +139,13 @@ fun Setting(
     onClick: () -> Unit // Parámetro para manejar eventos de clic
 ) {
     // Espaciador superior
-    Spacer(modifier = Modifier
-        .fillMaxWidth()
-        .height(1.dp)
-        .background(Color.Black)
-    )
+
 
     // Contenedor principal para el ajuste
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .height(56.dp)
+            .height(80.dp)
             .clickable(onClick = onClick),
         contentAlignment = Alignment.CenterStart
     ) {
@@ -181,11 +187,7 @@ fun Setting(
     }
 
     // Espaciador inferior
-    Spacer(modifier = Modifier
-        .fillMaxWidth()
-        .height(1.dp)
-        .background(Color.Black)
-    )
+
 }
 
 
