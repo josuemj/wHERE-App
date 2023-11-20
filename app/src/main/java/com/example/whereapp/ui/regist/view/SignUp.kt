@@ -84,7 +84,7 @@ fun SignUpScreen(
                     fontWeight = FontWeight.Bold,
                     style = MaterialTheme.typography.h6,
                     color = colorResource(id = R.color.metal_gray),
-                    fontSize = context.resources.getDimension(R.dimen.text_size_big).sp,
+                    fontSize = 50.sp,
                     modifier = Modifier.padding(bottom = 30.dp)
                 )
 
@@ -95,7 +95,7 @@ fun SignUpScreen(
                     label = { Text("Email") },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(bottom = context.resources.getDimension(R.dimen.padding_medium).dp),
+                        .padding(bottom = 20.dp),
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Person,
@@ -110,7 +110,7 @@ fun SignUpScreen(
                     label = { Text("Password") },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(bottom = context.resources.getDimension(R.dimen.padding_medium).dp),
+                        .padding(bottom = 20.dp),
                     visualTransformation = PasswordVisualTransformation(),
                     leadingIcon = {
                         Icon(
@@ -128,7 +128,7 @@ fun SignUpScreen(
                     visualTransformation = PasswordVisualTransformation(),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(bottom = context.resources.getDimension(R.dimen.padding_medium).dp),
+                        .padding(bottom = 20.dp),
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Lock,
@@ -163,7 +163,7 @@ fun SignUpScreen(
                 {
                     Text("Sign Up",
                         color = Color.White,
-                        fontSize = context.resources.getDimension(R.dimen.text_size_tiny).sp,)
+                        fontSize = 18.sp,)
                 }
 
 

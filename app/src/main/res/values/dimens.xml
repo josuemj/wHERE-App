@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Tamaños de texto -->
+    <dimen name="text_size_so_tiny">8sp</dimen>
     <dimen name="text_size_stiny">20sp</dimen>
     <dimen name="text_size_tiny">20sp</dimen>
     <dimen name="text_size_small">40sp</dimen>

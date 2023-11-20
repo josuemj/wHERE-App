@@ -25,7 +25,7 @@ import com.example.whereapp.navigation.Model
 @Composable
 fun WelcomeScreen(navController: NavController) {
     val context = LocalContext.current
-    // Background image
+
     Image(
         painter = painterResource(id = R.drawable.welcome_background),
         contentDescription = "Background Image",
@@ -69,7 +69,7 @@ fun WelcomeScreen(navController: NavController) {
             colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
         ) {
             Text(text = "REGISTER NOW",
-                fontSize = context.resources.getDimension(R.dimen.text_size_stiny).sp,
+                fontSize = 20.sp,
                 color = colorResource(id = R.color.shart))
         }
 
@@ -87,7 +87,7 @@ fun WelcomeScreen(navController: NavController) {
 
         ) {
             Text(text = "      LOGIN      ",
-                fontSize = context.resources.getDimension(R.dimen.text_size_stiny).sp,
+                fontSize = 23.sp,
                 color = colorResource(id = R.color.shart))
         }
     }

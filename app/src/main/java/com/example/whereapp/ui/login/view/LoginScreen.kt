@@ -133,7 +133,7 @@ fun LoginScreen(
                 {
                     Text("Login",
                         color = Color.White,
-                        fontSize = context.resources.getDimension(R.dimen.text_size_tiny).sp ,)
+                        fontSize = context.resources.getDimension(R.dimen.text_size_so_tiny).sp ,)
 
                 }
 
