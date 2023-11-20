@@ -44,7 +44,36 @@
         <string name="event_ubication_carmona_trails">Antigua Guatemala</string>
         <string name="event_rating_carmona_trails">4.9</string>
 
+        <!-- Aurora Zoo -->
+        <string name="event_name_zoo_aurora">Zoologico Aurora</string>
+        <string name="event_username_zoo_aurora">aurzoogt</string>
+        <string name="event_description_zoo_aurora">Nuevos amigos te esperan</string>
+        <string name="event_long_description_zoo_aurora">El Zoológico La Aurora presentó de manera oficial tres nuevos espacios de atracción para el público. Se trata de la Explanada de Balam, un nuevo recinto para flamencos del Caribe y un teatro educativo.</string>
+        <string name="event_ubication_zoo_aurora">Ciudad de Guatemala Zona 13</string>
+        <string name="event_rating_zoo_aurora">4.9</string>
 
+        <!-- Cafe District -->
+        <string name="event_name_coffee_district">Coffee District Guatemala</string>
+        <string name="event_username_coffee_district">CoffeDgt</string>
+        <string name="event_description_coffee_district">pasa una buena tarde</string>
+        <string name="event_long_description_coffee_district">En Coffee District encuentras lo mejor del café de especialidad de Guatemala.</string>
+        <string name="event_ubication_coffee_district">4 Grados Norte Zona 4</string>
+        <string name="event_rating_zoo_coffee_district">3.8</string>
 
+        <!-- Crepería Ruta 44 -->
+        <string name="event_name_ruta44">Creperia Ruta-44</string>
+        <string name="event_username_ruta44">ruta_44</string>
+        <string name="event_description_ruta44">las mejores crepas dela ciudad</string>
+        <string name="event_long_description_ruta44">Ven a disfrutar las mejores crepas de la ciudad mientras disfrutas de una hermosa vista y un gran ambiente</string>
+        <string name="event_ubication_ruta44">Hacienda real zona 16</string>
+        <string name="event_rating_ruta44">3.8</string>
+
+        <!-- Mondo coffee -->
+        <string name="event_name_mondo_coffee">Mondo Coffee Garden</string>
+        <string name="event_username_mondo_coffee">mondo_Coffe</string>
+        <string name="event_description_mondo_coffee">un cafe fuera lo ordinario</string>
+        <string name="event_long_description_mondo_coffee">Un lugar para relajarte y salir de la rutina. Aceptamos mascotas</string>
+        <string name="event_ubication_mondo_coffee">Casa vida vida, zona 14</string>
+        <string name="event_rating_mondo_coffee">3.0</string>
 
 </resources>
