@@ -1,19 +1,14 @@
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -22,24 +17,16 @@ import androidx.navigation.NavController
 import com.example.whereapp.ui.apphome.view.topbar.topAppBar
 import com.example.whereapp.R
 import com.example.whereapp.ui.apphome.viewModel.profile.LanguageViewModel
-import java.util.Locale
-import androidx.compose.ui.platform.LocalConfiguration
+
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
+
 import com.example.whereapp.navigation.Model
 
 
 @Composable
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 fun ProfileScreen(navController: NavController, languageViewModel: LanguageViewModel){
-    var locale by remember { mutableStateOf(Locale("en")) }
-    val configuration = LocalConfiguration.current
-    val context = LocalContext.current
 
-    // Aquí se crea una nueva configuración con la locale seleccionada y se actualiza el contexto.
-    val contextWithNewLocale = context.createConfigurationContext(configuration.apply { setLocale(locale) })
-    val resources = contextWithNewLocale.resources
 
     Scaffold(
         bottomBar = {
@@ -49,13 +36,7 @@ fun ProfileScreen(navController: NavController, languageViewModel: LanguageViewM
     ) { paddingValues ->
         Column(
         ) {
-            // El contenido del Scaffold va aquí
             Profile(languageViewModel,navController)
-            Button(onClick = {
-                //locale = if (locale.language == "es") Locale( "es") else Locale("es")
-            }) {
-                // Texto del botón o contenido va aquí
-            }
         }
     }
 
@@ -72,7 +53,7 @@ fun Profile(languageViewModel: LanguageViewModel,navController: NavController){
             modifier = Modifier
                 .fillMaxWidth()
                 .height((context.resources.getDimension(R.dimen.box_tiny).dp))
-            // Set the size of the box
+
             , contentAlignment = Alignment.Center
         ) {
             Image(
@@ -106,7 +87,7 @@ fun Profile(languageViewModel: LanguageViewModel,navController: NavController){
 
         Setting(icon = R.drawable.icon_langauge,
                 settingName = "Language") {
-            //ME VOY A MATAR
+
 
 
         }
@@ -119,29 +100,14 @@ fun Profile(languageViewModel: LanguageViewModel,navController: NavController){
 }
 
 
-@Composable
-fun LanguageToggleButton() {
-    var locale by remember { mutableStateOf(Locale.getDefault()) }
-
-    Button(onClick = {
-        locale = if (locale.language == "en") Locale("es") else Locale("en")
-        // Aquí deberías aplicar el 'locale' al contexto de tu aplicación y reiniciar la Activity
-        // TODO: Actualizar la configuración y reiniciar la Activity
-    }) {
-        Text(text = if (locale.language == "en") "Switch to Spanish" else "Switch to English")
-    }
-}
 
 @Composable
 fun Setting(
     icon: Int,
     settingName: String,
-    onClick: () -> Unit // Parámetro para manejar eventos de clic
+    onClick: () -> Unit
 ) {
-    // Espaciador superior
 
-
-    // Contenedor principal para el ajuste
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -155,7 +121,7 @@ fun Setting(
                 .padding(horizontal = 20.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // Icono del ajuste
+
             Image(
                 painter = painterResource(id = icon),
                 contentDescription = null,
@@ -166,7 +132,7 @@ fun Setting(
 
             Spacer(Modifier.width(16.dp))
 
-            // Nombre del ajuste
+
             Text(
                 text = settingName,
                 modifier = Modifier.weight(1f)
@@ -180,13 +146,12 @@ fun Setting(
 
                 Image(
                     painter = painterResource(id = R.drawable.icon_gonext),
-                    contentDescription = null // Añade una descripción apropiada para accesibilidad
+                    contentDescription = null
                 )
             }
         }
     }
 
-    // Espaciador inferior
 
 }
 
