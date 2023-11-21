@@ -75,5 +75,39 @@
     <string name="event_ubication_mondo_coffee">Casa Vida Vida, Zone 14</string>
     <string name="event_rating_mondo_coffee">3.0</string>
 
+    <!-- Volcan Acatenango -->
 
+    <string name="event_name_acatenango_volcan">Acatenango Volcano</string>
+    <string name="event_username_acatenango_volcan">acatechimal</string>
+    <string name="event_description_acatenango_volcan">Easy hike</string>
+    <string name="event_long_description_acatenango_volcan">Top of C.A</string>
+    <string name="event_ubication_acatenango_volcan">La Soledad, Chimaltenango</string>
+    <string name="event_rating_acatenango_volcan">5.0</string>
+
+    <!-- Campus Tec -->
+
+    <string name="event_name_campustec">Campus Tec</string>
+    <string name="event_username_campustec">tecgt</string>
+    <string name="event_description_campustec">High Tics</string>
+    <string name="event_long_description_campustec">
+The center of technological innovation that brings together
+        entrepreneurs and companies to drive the development of new technologies,
+        providing access to spaces with all the necessary elements to bring new ideas to reality.
+        </string>
+    <string name="event_ubication_campustec">Guatemala City, Zone 4</string>
+    <string name="event_rating_campustec">5.0</string>
+
+
+    <!-- Westin-->
+
+    <string name="event_name_westin">Westin Camino Real</string>
+    <string name="event_username_westin">caminorealgt</string>
+    <string name="event_description_westin">Visit Now!</string>
+    <string name="event_long_description_westin">
+                This elegant hotel is located in a modern building,
+        a 6-minute walk from the exclusive commercial
+        and entertainment district, Zona Viva
+            </string>
+    <string name="event_ubication_westin">Ciudad Guatemala Zona 10</string>
+    <string name="event_rating_westin">4.8</string>
 </resources>

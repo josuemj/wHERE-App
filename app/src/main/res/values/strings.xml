@@ -76,4 +76,39 @@
         <string name="event_ubication_mondo_coffee">Casa vida vida, zona 14</string>
         <string name="event_rating_mondo_coffee">3.0</string>
 
+        <!-- Volcan Acatenango -->
+
+        <string name="event_name_acatenango_volcan">Vocan Acatenango</string>
+        <string name="event_username_acatenango_volcan">acatechimal</string>
+        <string name="event_description_acatenango_volcan">Escalada facil</string>
+        <string name="event_long_description_acatenango_volcan">Tercer pico mas alto de C.A</string>
+        <string name="event_ubication_acatenango_volcan">La Soledad, Chimaltenango</string>
+        <string name="event_rating_acatenango_volcan">5.0</string>
+
+        <!-- Campus Tec-->
+
+        <string name="event_name_campustec">Campus Tec</string>
+        <string name="event_username_campustec">tecgt</string>
+        <string name="event_description_campustec">Innovacion a tope</string>
+        <string name="event_long_description_campustec">
+            Es el centro de innovación tecnológico que reúne emprendedores
+            y empresas para impulsar del desarrollo de nuevas tecnologías,
+            brindando acceso a espacios con todos los elementos
+            necesarios para hacer realidad las nuevas ideas
+        </string>
+        <string name="event_ubication_campustec">Ciudad Guatemala Zona 4</string>
+        <string name="event_rating_campustec">5.0</string>
+
+        <!-- Westin-->
+
+        <string name="event_name_westin">Westin Camino Real</string>
+        <string name="event_username_westin">caminorealgt</string>
+        <string name="event_description_westin">Reserva ya</string>
+        <string name="event_long_description_westin">
+                Este elegante hotel se encuentra en un edificio moderno,
+            a 6 minutos a pie del exclusivo distrito comercial
+            y de entretenimiento Zona Viva.
+            </string>
+        <string name="event_ubication_westin">Ciudad Guatemala Zona 10</string>
+        <string name="event_rating_westin">4.8</string>
 </resources>

@@ -139,6 +139,47 @@ class Events (
                     "14.621092563257328",
                     "-90.51413157723175"
 
+                ),
+                Events(
+                    context.getString(R.string.event_name_acatenango_volcan),
+                    context.getString(R.string.event_username_acatenango_volcan),
+                    "https://lahora.gt/wp-content/uploads/sites/5/2023/04/Volcan-Acatenango.jpeg",
+                    "https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/9b/16/d6.jpg",
+                    "230",
+                    context.getString(R.string.event_description_acatenango_volcan),
+                    context.getString(R.string.event_long_description_acatenango_volcan),
+                    context.getString(R.string.event_ubication_acatenango_volcan),
+                    "5.0",
+                    "14.5004608",
+                    "-90.8756662"
+                ),
+                Events(
+                    context.getString(R.string.event_name_campustec),
+                    context.getString(R.string.event_username_campustec),
+                    "https://www.guatemala.com/fotos/201801/tec-700x500.png",
+                    "https://images.squarespace-cdn.com/content/v1/5fa4b5ace41c003a0a498fe3/1608327108698-WUJXXGZMA447TCD4CLWA/unnamed-5-4%2Bcopia.jpg",
+                    "230",
+                    context.getString(R.string.event_description_campustec),
+                    context.getString(R.string.event_long_description_campustec),
+                    context.getString(R.string.event_ubication_campustec),
+                    "5.0",
+                    "14.622081014607604",
+                    "-90.5136325"
+
+                ),
+                Events(
+                    context.getString(R.string.event_name_westin),
+                    context.getString(R.string.event_username_westin),
+                    "https://guatemalacvb.com/wp-content/uploads/sites/46/2022/02/Logo-Westin2-224x166-1431542502.jpg",
+                    "https://www.savacations.com/wp-content/uploads/2020/08/The-Westin-Camino-Real-Guatemala-City24.jpg",
+                    "230",
+                    context.getString(R.string.event_description_westin),
+                    context.getString(R.string.event_long_description_westin),
+                    context.getString(R.string.event_ubication_westin),
+                    "5.0",
+                    "14.598029",
+                    "-90.5162369"
+
                 )
 
             )
